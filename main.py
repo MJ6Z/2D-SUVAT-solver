@@ -1,12 +1,11 @@
 
-try:
-    import suvatEngine as engine # woop woop my own code works
-    import numpy as np
-    import plotly.graph_objects as go
-except ImportError:
-    import pip
-    pip.main(['install', '--user', 'numpy'])
-    pip.main(['install', '--user', 'plotly'])
+
+# INSTALL --- pip install numpy    and pip install plotly
+
+
+import suvatEngine as engine # woop woop my own code works
+import numpy as np
+import plotly.graph_objects as go
 
 
 
@@ -66,14 +65,12 @@ else:
 
 #labeling
 fig.update_layout(
-    title="Trajectories", xaxis_title="Horizontal travel in M", yaxis_title="Vericle travel in M"
-)
+    title="Trajectories (velocity, theta from the verticle, height)", xaxis_title="Horizontal travel (M)", yaxis_title="Vericle travel (M)")
 
 #make 1x=1y, as the graph should be life-like.
 fig.update_yaxes(
     scaleanchor = "x",
-    scaleratio = 1,
-  )
+    scaleratio = 1,)
 
 
 #plot figure

@@ -23,16 +23,6 @@ class suvat:
     def projectile_y(self):
         return (self.timearray*self.v0y)-((self.g/2)*(self.timearray**2))+self.h # suvat equation moment, verticle displacement, y=vertS
 
-    def maxh(self):
-        return (self.v0y**2)/(2*self.g)
-
-
-
-
- #  def returnvalues(self):
-  #      return("v: "+self.v+"  theta: "+self.theta+"  time-elapsed: "+self.maxt+"  v0x: "+self.v0x+"  v0y: "+self.v0y)
-
-        
 
 
 
