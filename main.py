@@ -1,6 +1,16 @@
-import suvatEngine as engine # woop woop my own code works
-import numpy as np
-import plotly.graph_objects as go
+
+try:
+    import suvatEngine as engine # woop woop my own code works
+    import numpy as np
+    import plotly.graph_objects as go
+except ImportError:
+    import pip
+    pip.main(['install', '--user', 'numpy'])
+    pip.main(['install', '--user', 'plotly'])
+
+
+
+
 fig = go.Figure()
 
 
