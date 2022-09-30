@@ -4,6 +4,7 @@ import plotly.graph_objects as go
 fig = go.Figure()
 
 def plotit(v,theta):
+
     #suvat-engine makes the dataset 
     plot1 = engine.suvat(float(v),float(theta)) 
 
