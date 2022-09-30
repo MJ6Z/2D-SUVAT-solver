@@ -3,56 +3,57 @@ import numpy as np
 import plotly.graph_objects as go
 fig = go.Figure()
 
-def plotit(v,theta):
 
+def plotit(v,theta,h,name):
     #suvat-engine makes the dataset 
-    plot1 = engine.suvat(float(v),float(theta)) 
-
+    plot = engine.suvat(float(v),float(theta),float(h))
     #making the data passable to plotly
-    x = plot1.projectile_x() 
-    y = plot1.projectile_y()
+    x = plot.projectile_x()
+    y = plot.projectile_y()
     y=y.flatten()   
     x=x.flatten()
     xl = x.tolist()
     yl = y.tolist()
-
     #plot the figure
-    fig.add_trace(go.Scatter(x=xl, y=yl,mode="lines"))
+    fig.add_trace(go.Scatter(x=xl, y=yl,mode="lines", name=name))
+    del plot
 
 
 
 InP=""
 mode = int(input("mode1/2:  "))
 if mode == 1:
-    while InP!="plot":
-        try:
-            InP = input("v,theta:   ")
-            values=InP.split(",")
-            plotit(values[0],values[1])
-            del plot1
-        except:
-            None
-    
+
+
+    while True:
+        Inp = input("v,theta,h:   ")
+        if Inp == "b" or Inp=="plot":
+            break
+        values=Inp.split(",")
+        plotit(values[0],values[1],values[2],"name")
+
+
+
 else:
-    try:
-        v=float(input("v:  "))
-        theta = [0,5,10,15,20,25,30,35,45,50,55,60,65,70,75,80,85,90]
-        for i in range(len(theta)):
-            plotit(v,theta[i])
-    except:
-        None
+    Inp=input("v,h:  ")
+    theta_range = [0,10,20,30,40,50,60,70,80,90]
+    values=Inp.split(",")
+    for i in range(1,89):
+        plotit(values[0],i,values[1],i)
 
 
 
 
 
 
-#making it look nice n that
+
+#labeling
 
 fig.update_layout(
-    title="hi", xaxis_title="Horizontal travel in M", yaxis_title="Vericle travel in M"
+    title="Trajectories", xaxis_title="Horizontal travel in M", yaxis_title="Vericle travel in M"
 )
 
+#make 1x=1y, as the graph should be life-like.
 fig.update_yaxes(
     scaleanchor = "x",
     scaleratio = 1,
