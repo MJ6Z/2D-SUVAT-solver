@@ -60,6 +60,7 @@ elif mode == 2:
     for i in range(1,90):
         plotter(values[0],i,values[1],i)
 else:
+    None
 
 
 
