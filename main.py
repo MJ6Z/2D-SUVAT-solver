@@ -38,28 +38,30 @@ enter b to break, and plot your graph.
 """)
 
 
-uin=""
-mode = int(input("1 / 2:  "))
-if mode == 1:
+while True:
+    uin=""
+    mode = input("1 / 2:  ")
+    if mode == '1':
 
 
-    while uin!="b":
-        uin = input("v,theta,h:   ")
+        while uin!="b":
+            uin = input("v,theta,h:   ")
+            values=uin.split(",")
+            fig.add_trace(go.Scatter(x=[values[0]], y=[values[2]],mode="scatter", name='start-point'))
+            try:
+                plotter(values[0],values[1],values[2],uin)
+            except:
+                None
+
+
+
+    elif mode == '2':
+        uin=input("v,h:  ")
         values=uin.split(",")
-        try:
-            plotter(values[0],values[1],values[2],uin)
-        except:
+        for i in range(1,90):
+            plotter(values[0],i,values[1],i)
+    else:
             None
-
-
-
-elif mode == 2:
-    uin=input("v,h:  ")
-    values=uin.split(",")
-    for i in range(1,90):
-        plotter(values[0],i,values[1],i)
-else:
-    None
 
 
 
@@ -71,7 +73,6 @@ fig.update_layout(
 fig.update_yaxes(
     scaleanchor = "x",
     scaleratio = 1,)
-
 
 #plot figure
 fig.show()

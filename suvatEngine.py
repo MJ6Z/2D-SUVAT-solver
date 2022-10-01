@@ -15,7 +15,7 @@ class suvat:
         else:
             self.maxt = (math.sqrt(2*self.g*self.h+(self.v0y**2))+self.v0y)/self.g
 
-        self.timearray = np.linspace(0,self.maxt,2000)[:,None] # array from 0 to t, 100 increments.
+        self.timearray = np.linspace(0,self.maxt,1000)[:,None] # array from 0 to t, 100 increments.
 
     def projectile_x(self):
         return (self.timearray*self.v0x) # horizontal displacement x=HorizS
