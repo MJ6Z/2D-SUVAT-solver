@@ -43,30 +43,30 @@ class suvat:
         name = "",self.v,",",self.theta,",",self.h,"" # name of the line is the input values of the object.
         return name
 
-if sys.argv[1]=="help" or sys.argv[1]=="--help" or sys.argv[1]=="-help": # prints the help menu.
-    print("""
-
-    2D SUVAT solver!
-
-    velocity in ms-1
-    height in m
-    theta in degrees from the ~~verticle~~
-
-    modes:
-    1: plot as many trajectories at specified v,theta,h values.
-    2: plot 90 trajectores at the same v,h value for theta 0 to 90.
-
-    data entry:
-    1 v,h,theta-v,h,theta- ect.
-    2 v,h-
-
-    """)
-    quit()
 
 try:
-    junk=sys.argv[2]
+    if sys.argv[1]=="help" or sys.argv[1]=="--help" or sys.argv[1]=="-help": # prints the help menu.
+        print("""
+
+        2D SUVAT solver!
+
+        velocity in ms-1
+        height in m
+        theta in degrees from the ~~verticle~~
+
+        modes:
+        1: plot as many trajectories at specified v,theta,h values.
+        2: plot 90 trajectores at the same v,h value for theta 0 to 90.
+
+        data entry:
+        1 v,h,theta-v,h,theta- ect.
+        2 v,h-
+
+        """)
+        quit()
 except:
     quit()
+
 
 long = sys.argv[2].split("-") # evaling cmdl argument
 
