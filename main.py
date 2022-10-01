@@ -27,10 +27,16 @@ fig = go.Figure()
 print("""
 
 2D SUVAT solver!
-full input (1) or v+h at all angles (2)?:
+
+velocity in ms-1
+height in m
+theta in degrees from the verticle
+
+full input (1) or a sepcific velocity & height at all angles (2)?:
 enter b to break, and plot your graph.
 
 """)
+print()
 
 uin=""
 mode = int(input("1 / 2:  "))
