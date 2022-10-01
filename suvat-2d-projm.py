@@ -64,10 +64,11 @@ if sys.argv[1]=="help" or sys.argv[1]=="--help" or sys.argv[1]=="-help": # print
     quit()
 
 try:
-    long = sys.argv[2].split("-") # evaling cmdl argument
+    junk=sys.argv[2]
 except:
     quit()
 
+long = sys.argv[2].split("-") # evaling cmdl argument
 
 # mode 1, see readme
 if sys.argv[1]=="1":
