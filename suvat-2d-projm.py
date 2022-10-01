@@ -59,10 +59,14 @@ if sys.argv[1]=="help" or sys.argv[1]=="--help" or sys.argv[1]=="-help": # print
     data entry:
     1 v,h,theta-v,h,theta- ect.
     2 v,h-
+
     """)
+    quit()
 
-
-long = sys.argv[2].split("-") # evaling cmdl argument
+try:
+    long = sys.argv[2].split("-") # evaling cmdl argument
+except:
+    quit()
 
 
 # mode 1, see readme
