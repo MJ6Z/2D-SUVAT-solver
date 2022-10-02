@@ -39,6 +39,9 @@ class suvat:
     def name(self):
         name = "",self.v,",",self.theta,",",self.h,"" # name of the line is the input values of the object.
         return name
+    def returnv(self,i):
+        mh = self.h + (self.v0y**2)/(2*self.g)
+        print("for data set:",i," flight time =",self.maxt," max height: ",mh,"")
     
 
 
@@ -90,6 +93,7 @@ if sys.argv[1]=="1":
 
             #plotting.
             fig.add_trace(go.Scatter(x=xdata, y=ydata,mode="lines", name=name))    
+            set.returnv(long[i])
             del set
 
         except:
