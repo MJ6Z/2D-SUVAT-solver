@@ -4,9 +4,9 @@
 uses command line data entry now
 
 e.g:
-python3 suvat-2d-projem.py help
-python3 suvat-2d-projem.py 1 20,20,10-10,300,10
-python3 suvat-2d-projem.py 2 20,10
+python3 suvat-2d.py help
+python3 suvat-2d.py 1 20,20,10-10,300,10
+python3 suvat-2d.py 2 20,10
 
 data:
 velocity in ms-1
