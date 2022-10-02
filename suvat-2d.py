@@ -13,17 +13,14 @@ class suvat:
         self.rads = theta*(np.pi/180) # putting theta in rads for numpy
 
         #verticle and horizontal componants of v at t=0.
-        self.v0y = v * np.cos(self.rads)
-        self.v0x = v * np.sin(self.rads) 
+        self.v0y = v * np.sin(self.rads)
+        self.v0x = v * np.cos(self.rads) 
 
         #flight time
-        if h==0:
-            self.maxt = (2*self.v0y)/self.g
-        else:
-            self.maxt = (math.sqrt(2*self.g*self.h+(self.v0y**2))+self.v0y)/self.g 
+        self.maxt = (self.v0y+math.sqrt(2*self.g*self.h+(self.v0x**2)))/self.g 
 
-        # array from 0 to t, 2000 increments, used to calculate.
-        self.timearray = np.linspace(0,self.maxt,2000)[:,None]
+        # array from 0 to t, 1000 increments, used to calculate.
+        self.timearray = np.linspace(0,self.maxt,1000)[:,None]
 
 
 
@@ -42,6 +39,9 @@ class suvat:
     def name(self):
         name = "",self.v,",",self.theta,",",self.h,"" # name of the line is the input values of the object.
         return name
+    
+
+
 
 
 try:
@@ -68,7 +68,12 @@ except:
     quit()
 
 
+
+
+
 long = sys.argv[2].split("-") # evaling cmdl argument
+
+print(long)
 
 # mode 1, see readme
 if sys.argv[1]=="1":
@@ -84,12 +89,13 @@ if sys.argv[1]=="1":
             name =str(set.name())
 
             #plotting.
-            fig.add_trace(go.Scatter(x=xdata, y=ydata,mode="lines", name=name))
+            fig.add_trace(go.Scatter(x=xdata, y=ydata,mode="lines", name=name))    
             del set
 
         except:
             print("value error dataset: ",long[i]," quitting." )
             quit()
+
 
 
 
@@ -108,6 +114,7 @@ elif sys.argv[1]=="2":
 
             #plotting.
             fig.add_trace(go.Scatter(x=xdata, y=ydata,mode="lines", name=name))
+
             del set
     except:
         print("Invalid data quitting.")
@@ -116,6 +123,10 @@ elif sys.argv[1]=="2":
 else:
     print("Invalid input quitting.")
     quit()
+
+
+
+
 
 
 #labeling
