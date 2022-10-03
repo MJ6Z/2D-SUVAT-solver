@@ -17,11 +17,10 @@ class suvat:
         self.v0x = v * np.cos(self.rads) 
 
         #flight time
-        self.maxt = (self.v0y+math.sqrt(2*self.g*self.h+(self.v0x**2)))/self.g 
+        self.maxt = (self.v0y+math.sqrt(2*self.g*self.h+(self.v0y**2)))/self.g 
 
         # array from 0 to t, 1000 increments, used to calculate.
         self.timearray = np.linspace(0,self.maxt,1000)[:,None]
-
 
 
     def projectile_x(self):
@@ -50,21 +49,16 @@ class suvat:
 try:
     if sys.argv[1]=="help" or sys.argv[1]=="--help" or sys.argv[1]=="-help": # prints the help menu.
         print("""
-
         2D SUVAT solver!
-
         velocity in ms-1
         height in m
         theta in degrees from the ~~verticle~~
-
         modes:
         1: plot as many trajectories at specified v,theta,h values.
         2: plot 90 trajectores at the same v,h value for theta 0 to 90.
-
         data entry:
         1 v,h,theta-v,h,theta- ect.
         2 v,h-
-
         """)
         quit()
 except:
