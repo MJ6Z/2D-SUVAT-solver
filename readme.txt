@@ -11,12 +11,14 @@ python3 suvat-2d.py 2 20,10
 data:
 velocity in ms-1
 height in m
-theta in degrees from the ~~verticle~~
+theta in degrees from the ~~horizontal~~
 
 modes:
 1: plot as many trajectories at specified v,theta,h values.
 2: plot 90 trajectores at the same v,h value for theta 0 to 90.
 
 data entry:
-1 v,h,theta-v,h,theta- ect.
-2 v,h-
+1 v,h,theta-v,h,theta ect.
+2 v,h
+
+note: no - at end of data input.
